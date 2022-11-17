@@ -1,0 +1,29 @@
+[flake8]
+ignore = 
+    # whitespace before ‘,’, ‘;’, or ‘:’
+    E203, 
+    # too many leading ‘#’ for block comment
+    E266, 
+    # line too long (instead we use Bugbear's warning B950)
+    E501, 
+    # line break before binary operator
+    W503
+# line length is intentionally set to 80 here because black uses Bugbear
+# See https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length for more details
+max-line-length = 80
+# allowed mccabe complexity (https://en.wikipedia.org/wiki/Cyclomatic_complexity)
+max-complexity = 10
+select = 
+    # bugbear (https://pypi.org/project/flake8-bugbear/)
+    B,
+    # comprehensions (https://pypi.org/project/flake8-comprehensions/)
+    # mccabe complexity (only C901) (https://github.com/pycqa/mccabe)
+    C,
+    # pycodestyle errors (https://pycodestyle.pycqa.org/en/latest/intro.html)
+    E,
+    # pyflakes (https://flake8.pycqa.org/en/latest/user/error-codes.html)
+    F,
+    # pycodestyle warnings (https://pycodestyle.pycqa.org/en/latest/intro.html)
+    W,
+    # simplify (https://pypi.org/project/flake8-simplify/)
+    SIM
